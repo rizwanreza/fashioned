@@ -41,7 +41,7 @@ file 'config/database.yml', <<-CODE
 CODE
 
 # Initialize HAML
-run 'haml --rails .'
+run 'bundle exec haml --rails .'
 
 # Initialize testing suite
 run 'script/rails g rspec:install'
