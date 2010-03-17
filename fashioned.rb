@@ -35,11 +35,6 @@ if defined?(PhusionPassenger)
 end
 CODE
 
-# Overwrites database.yml
-file 'config/database.yml', <<-CODE
-# Using MongoDB
-CODE
-
 # Initialize HAML
 run 'bundle exec haml --rails .'
 
@@ -51,6 +46,11 @@ file 'config/cucumber.yml', <<-CUCUMBER
 default: --format pretty --color
 wip: --tags @wip:3 --wip features
 CUCUMBER
+
+# Overwrites database.yml
+file 'config/database.yml', <<-CODE
+# Using MongoDB
+CODE
 
 run "curl -L http://github.com/rizwanreza/fashioned/raw/master/rstakeout.rb > script/rstakeout"
 run "curl -L http://github.com/rizwanreza/fashioned/raw/master/cucumber-stakeout.sh > script/cucumber-stakeout"
