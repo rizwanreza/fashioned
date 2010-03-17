@@ -89,9 +89,6 @@ run "rm public/images/rails.png"
 # Remove test directory since we're not using test/unit
 run "rm -rf test"
 
-# Change to app directory.
-run "cd #{app}"
-
 readme = <<-README
 ===============================================================================
 
