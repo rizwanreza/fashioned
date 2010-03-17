@@ -46,6 +46,18 @@ run 'haml --rails .'
 # Initialize testing suite
 run 'script/rails g rspec:install'
 run 'script/rails g cucumber:skeleton --rspec --webrat'
+
+file 'config/cucumber.yml', <<-CUCUMBER
+default: --format pretty --color
+wip: --tags @wip:3 --wip features
+CUCUMBER
+
+run "curl -L http://github.com/rizwanreza/fashioned/raw/master/rstakeout.rb > script/rstakeout"
+run "curl -L http://github.com/rizwanreza/fashioned/raw/master/cucumber-stakeout.sh > script/cucumber-stakeout"
+run "curl -L http://github.com/rizwanreza/fashioned/raw/master/rspec-stakeout.sh > rspec-stakeout"
+
+run "chmod +x script/*"
+
 capify!
 
 # Remove default javascript files, download jQuery 1.4.2 and initialize jQuery in application.js
