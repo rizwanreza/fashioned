@@ -54,7 +54,7 @@ CUCUMBER
 
 run "curl -L http://github.com/rizwanreza/fashioned/raw/master/rstakeout.rb > script/rstakeout"
 run "curl -L http://github.com/rizwanreza/fashioned/raw/master/cucumber-stakeout.sh > script/cucumber-stakeout"
-run "curl -L http://github.com/rizwanreza/fashioned/raw/master/rspec-stakeout.sh > rspec-stakeout"
+run "curl -L http://github.com/rizwanreza/fashioned/raw/master/rspec-stakeout.sh > script/rspec-stakeout"
 
 run "chmod +x script/*"
 
@@ -117,6 +117,11 @@ readme = <<-README
      require "action_mailer/railtie"
      require "active_resource/railtie"
      require "rails/test_unit/railtie"
+     
+   * Run continuous scripts:
+     
+     ./script/rspec-stakeout
+     ./script/cucumber-stakeout
 
    Get coding!
 
